@@ -15,6 +15,20 @@
 
 <p>Сегодня: <span th:text="${today}"/></p>
 
+<table>
+    <caption>Book list</caption>
+    <tr>
+        <th>Name</th>
+        <th>Year</th>
+        <th>Author</th>
+    </tr>
+    <tr th:each="book : ${books}">
+        <td th:text="${book.name}"/>
+        <td th:text="${book.year_publish}"/>
+        <td th:text="${book.author}"/>
+    </tr>
+</table>
+
 <script th:src="@{/js/index.js}"></script>
 </body>
 </html>
