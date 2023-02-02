@@ -5,30 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Simple page title</title>
-    <link rel="stylesheet"  th:href="@{/css/style.css}">
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+    <link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
 </head>
 <body>
 
-<h1>Header page h1</h1>
-<p>this is paragraph block</p>
-<p class="red-text">this is red text paragraph block</p>
+<div class="container">
+    <!-- Content here -->
+    <h1>Header page h1</h1>
+    <p>this is paragraph block</p>
+    <p class="red-text">this is red text paragraph block</p>
 
-<p>Сегодня: <span th:text="${today}"/></p>
+    <p class="text-success">Сегодня: <span th:text="${today}"/></p>
 
-<table>
-    <caption>Book list</caption>
-    <tr>
-        <th>Name</th>
-        <th>Year</th>
-        <th>Author</th>
-    </tr>
-    <tr th:each="book : ${books}">
-        <td th:text="${book.name}"/>
-        <td th:text="${book.year_publish}"/>
-        <td th:text="${book.author}"/>
-    </tr>
-</table>
+    <table class="table">
+        <caption>Book list</caption>
+        <thead>
+        <tr>
+            <th scope="col">Id</th>
+            <th scope="col">Name</th>
+            <th scope="col">Year</th>
+            <th scope="col">Author</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="book : ${books}">
+            <td th:text="${book.id}"/>
+            <td th:text="${book.name}"/>
+            <td th:text="${book.year_publish}"/>
+            <td th:text="${book.author}"/>
+        </tr>
+        </tbody>
+    </table>
+</div>
 
+
+<script th:src="@{/js/bootstrap.bundle.min.js}"></script>
 <script th:src="@{/js/index.js}"></script>
 </body>
 </html>
