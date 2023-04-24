@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{layout/head}"></head>
+
+<body data-theme="light">
+<div class="wrapper">
+    <nav th:replace="~{layout/sidebar}"></nav>
+
+    <div class="main">
+        <nav th:replace="~{layout/menu}"></nav>
+
+        <main class="content">
+            <div class="container-fluid p-0">
+                <h1>User page</h1>
+                <p th:text="${user.getUsername()}"></p>
+            </div>
+        </main>
+
+        <footer th:replace="~{layout/footer}"></footer>
+    </div>
+</div>
+
+<script src="/js/app.js" th:src="@{/js/app.js}"></script>
+
+</body>
+
+</html>
